@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_and_belongs_to_many :excursions
+  has_and_belongs_to_many :tours
 
   validates :name, presence: true, uniqueness: {case_insensitive: true}
 end
