@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140125213601) do
+ActiveRecord::Schema.define(version: 20140126000139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 20140125213601) do
   add_index "categories_tours", ["category_id", "tour_id"], name: "index_categories_tours_on_category_id_and_tour_id", unique: true, using: :btree
 
   create_table "cities", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tours_count", default: 0, null: false
   end
 
   add_index "cities", ["name"], name: "index_cities_on_name", unique: true, using: :btree
