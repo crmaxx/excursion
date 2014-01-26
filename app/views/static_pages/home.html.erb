@@ -1,5 +1,30 @@
-<h1>StaticPages#home</h1>
+<h1>All tours</h1>
 <div class="row">
   <div class="col-md-9">
+    <% if @cities && @cities.any? %>
+      <%= @cities.each do |city| %>
+        <h2><%= city.name %></h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Tour Name</th>
+              <th>Tour Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= city.tours.each do |tour| %>
+            <tr>
+              <td><%= tour.id %></td>
+              <td><%= tour.name %></td>
+              <td><%= tour.description %></td>
+            </tr>
+            <% end -%>
+          </tbody>
+        </table>
+      <% end -%>
+    <% else %>
+    <p>No cities found</p>
+    <% end -%>
   </div>
 </div>
