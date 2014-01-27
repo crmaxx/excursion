@@ -9,13 +9,13 @@
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li><%= link_to "Cities", '#' %></li>
-      <li><%= link_to "Categories", '#' %></li>
-      <li><%= link_to "Tours", '#' %></li>
+      <li><%= link_to "Cities", cities_path %></li>
+      <li><%= link_to "Categories", categories_path %></li>
+      <li><%= link_to "Tours", tours_path %></li>
     </ul>
     <div class="navbar-header navbar-right">
       <p class="navbar-text">
-      <a href="#" class="navbar-link">admin</a>
+        <%= link_to 'admin', admin_root_path, class: 'navbar-link' %>
       </p>
     </div>
   </div>
