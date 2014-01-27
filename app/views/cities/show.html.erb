@@ -1,0 +1,25 @@
+<h1><%= @city.name %></h1>
+<% if @city_tours %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tour Name</th>
+        <th>Tour Categories</th>
+        <th>Tour Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @city_tours.each do |tour| %>
+      <tr>
+        <td><%= tour.id %></td>
+        <td><%= link_to tour.name, tour_path(tour) %></td>
+        <td><%= categories_links(tour.categories) %></td>
+        <td><%= truncate tour.description %></td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>
+<% else %>
+  <p>No tours found</p>
+<% end -%>

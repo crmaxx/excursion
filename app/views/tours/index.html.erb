@@ -1,2 +1,10 @@
-<h1>Tours#index</h1>
-<p>Find me in app/views/tours/index.html.erb</p>
+<h1>All Tours</h1>
+<% if @tours %>
+  <ul class="list">
+    <% @tours.each do |tour| %>
+      <li class="list-item"><%= link_to tour.name, tour_path(tour) %></li>
+    <% end -%>
+  </ul>
+<% else %>
+  <p>No tours found</p>
+<% end -%>

@@ -1,2 +1,10 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+<h1>All Cities</h1>
+<% if @cities %>
+  <ul class="list">
+    <% @cities.each do |city| %>
+      <li class="list-item"><%= link_to city.name, city_path(city) %></li>
+    <% end -%>
+  </ul>
+<% else %>
+  <p>No cities found</p>
+<% end -%>

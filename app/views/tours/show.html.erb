@@ -1,0 +1,11 @@
+<h1><%= @tour.name %></h1>
+<div class="row">
+  <div class="col-md-8">
+    <p>Description: <%= @tour.description %></p>
+    <p>City: <%= link_to @tour.city.name, city_path(@tour.city) %></p>
+    <p>Categories: <%= categories_links(@tour.categories) %></p>
+  </div>
+  <div class="col-md-4">
+    <p>sadasdas</p>
+  </div>
+</div>

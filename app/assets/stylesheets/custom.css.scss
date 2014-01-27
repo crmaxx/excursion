@@ -73,6 +73,13 @@ p {
   }
 }
 
+/* body */
+ul {
+  &.list {
+    list-style: none;
+  }
+}
+
 /* footer */
 
 footer {

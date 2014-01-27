@@ -1,7 +1,7 @@
 <h1>All tours</h1>
 <div class="row">
   <div class="col-md-12">
-    <% if @cities && @cities.any? %>
+    <% if @cities %>
       <% @cities.each do |city| %>
         <h2><%= city.name %></h2>
         <table class="table table-striped">
