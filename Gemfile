@@ -13,11 +13,14 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+#gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+
+gem 'hiredis', '~> 0.4.5'
+gem 'redis', '>= 2.2.0', :require => ['redis', 'redis/connection/hiredis']
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
