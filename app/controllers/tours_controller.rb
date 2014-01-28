@@ -4,8 +4,11 @@ class ToursController < ApplicationController
   end
 
   def show
-    @user = AdminUser.first
+    current_user = AdminUser.first
+    @activities = Tour.fetch_latest_from_queue(current_user)
+
     @tour = Tour.active.includes(:city, :categories).find_by(id: params[:id])
-    @activities = Tour.fetch_latest_from_queue(@user)
+    @tour.add_to_queue!(current_user)
+    @tour.trim_queue!(current_user)
   end
 end
