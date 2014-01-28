@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <% if @cities %>
       <% @cities.each do |city| %>
-        <h2><%= city.name %></h2>
+        <h2><%= link_to city.name, city_path(city) %></h2>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -16,8 +16,8 @@
             <% city.tours.recent.each do |tour| %>
             <tr>
               <td><%= tour.id %></td>
-              <td><%= tour.name %></td>
-              <td><%= tour.description %></td>
+              <td><%= link_to tour.name, tour_path(tour) %></td>
+              <td><%= truncate tour.description %></td>
             </tr>
             <% end -%>
           </tbody>
