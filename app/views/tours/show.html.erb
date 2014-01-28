@@ -6,6 +6,7 @@
     <p>Categories: <%= categories_links(@tour.categories) %></p>
   </div>
   <div class="col-md-4">
+    <p>Last viewed tours:</p>
     <% if @activities %>
       <% @activities.each do |activity| %>
         <p><%= link_to activity.name, tour_path(activity) %></p>
