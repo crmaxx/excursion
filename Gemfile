@@ -29,6 +29,7 @@ end
 
 group :development do
   gem 'powify'
+  gem 'pry'
 end
 
 group :development, :test do
@@ -39,4 +40,9 @@ group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
   gem 'shoulda-matchers', :git => 'https://github.com/thoughtbot/shoulda-matchers.git'
+  gem 'factory_girl_rails'
+  gem 'timecop'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
