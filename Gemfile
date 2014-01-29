@@ -20,7 +20,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'hiredis', '~> 0.4.5'
-gem 'redis', '>= 2.2.0', :require => ['redis', 'redis/connection/hiredis']
+gem 'redis', '>= 2.2.0', require: ['redis', 'redis/connection/hiredis']
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -39,7 +39,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
-  gem 'shoulda-matchers', :git => 'https://github.com/thoughtbot/shoulda-matchers.git'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git'
   gem 'factory_girl_rails'
   gem 'timecop'
   gem 'launchy'
