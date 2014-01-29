@@ -9,9 +9,9 @@ describe Tour do
   context 'validations' do
     it { should validate_presence_of(:city_id) }
     it { should validate_presence_of(:name) }
-    it do
-      Tour.create!(city_id: 1, name: 'test')
+    it {
+      FactoryGirl.create(:tour)
       should validate_uniqueness_of(:name)
-    end
+    }
   end
 end
