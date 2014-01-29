@@ -22,7 +22,9 @@ class Tour < ActiveRecord::Base
 
   private
   def update_counter_cache
-    self.city.tours_count = Tour.active.where('city_id = ?', self.city.id).count
-    self.city.save
+    unless destroyed?
+      self.city.tours_count = Tour.active.where('city_id = ?', self.city.id).count
+      self.city.save
+    end
   end
 end
